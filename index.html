@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>وَهَج | حركة تضيء الفكرة</title>
+<meta name="description" content="وَهَج — استوديو موشن جرافيك وتصميم حركي. نُصنع حركة تضيء الفكرة.">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@400;500;600;700&family=Tajawal:wght@200;300;400;500;700;800;900&display=swap" rel="stylesheet">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="is-loading">
+
+<div class="preloader" id="preloader" aria-hidden="true">
+  <div class="preloader__panel preloader__panel--top"></div>
+  <div class="preloader__panel preloader__panel--bottom"></div>
+  <div class="preloader__core">
+
+    <svg class="preloader__ring" viewBox="0 0 200 200" aria-hidden="true">
+      <defs>
+        <linearGradient id="ringGrad" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#F5B544"/>
+          <stop offset="50%" stop-color="#FF6B3D"/>
+          <stop offset="100%" stop-color="#6C3BFF"/>
+        </linearGradient>
+      </defs>
+      <circle class="preloader__track" cx="100" cy="100" r="88"/>
+      <circle class="preloader__progress" cx="100" cy="100" r="88"/>
+    </svg>
+    <div class="preloader__glow"></div>
+
+    <div class="preloader__word">
+      <span>وَ</span><span>هَ</span><span>ج</span>
+    </div>
+  </div>
+  <div class="preloader__tag">حركة تضيء الفكرة</div>
+</div>
+
+<div class="cursor" id="cursor" aria-hidden="true">
+  <span class="cursor__ring"></span>
+  <span class="cursor__dot"></span>
+</div>
+
+<div class="bg" aria-hidden="true">
+  <div class="bg__base"></div>
+
+  <div class="blob blob--gold"></div>
+  <div class="blob blob--fire"></div>
+  <div class="blob blob--violet"></div>
+  <div class="blob blob--gold-2"></div>
+
+  <img class="geo geo--1" src="assets/ornament.svg" alt="">
+  <img class="geo geo--2" src="assets/ornament-2.svg" alt="">
+  <img class="geo geo--3" src="assets/ornament.svg" alt="">
+
+  <div class="bg__grid"></div>
+
+  <div class="particles" id="particles"></div>
+
+  <div class="bg__grain"></div>
+  <div class="bg__vignette"></div>
+</div>
+
+<header class="nav" id="nav">
+  <a href="#hero" class="nav__brand">
+    <img class="nav__mark" src="assets/logo-mark.svg" alt="شعار وَهَج">
+    <span class="nav__name">وَهَج</span>
+  </a>
+  <nav class="nav__links" aria-label="التنقل الرئيسي">
+    <a href="#about" class="nav__link"><span>من نحن</span></a>
+    <a href="#services" class="nav__link"><span>خدماتنا</span></a>
+    <a href="#works" class="nav__link"><span>أعمالنا</span></a>
+    <a href="#contact" class="nav__link nav__link--cta"><span>تواصل</span></a>
+  </nav>
+  <button class="nav__burger" id="burger" aria-label="فتح القائمة" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<main id="main">
+
+  <section class="hero" id="hero">
+    <div class="hero__eyebrow"><span class="dot"></span><span class="txt">استوديو موشن جرافيك وتصميم حركي</span></div>
+
+    <h1 class="hero__title" aria-label="وَهَج">
+      <span class="hero__letter">وَ</span>
+      <span class="hero__letter">هَ</span>
+      <span class="hero__letter">ج</span>
+      <span class="hero__shine" aria-hidden="true"></span>
+    </h1>
+
+    <p class="hero__tagline">حركة <em>تُضيء</em> الفكرة</p>
+
+    <div class="hero__actions">
+      <a href="#works" class="btn btn--primary"><span>شاهد أعمالنا</span></a>
+      <a href="#contact" class="btn btn--ghost"><span>ابدأ مشروعك</span></a>
+    </div>
+
+    <div class="hero__scroll" aria-hidden="true">
+      <span class="hero__scroll-line"></span>
+      <span class="hero__scroll-txt">مرّر للأسفل</span>
+    </div>
+  </section>
+
+  <section class="section about" id="about">
+    <div class="wrap about__grid">
+      <div class="about__side">
+        <span class="tag" data-reveal>من نحن</span>
+        <h2 class="h2" data-reveal>
+          نصنع حركة<br>
+          <span class="grad">تُشبه الفكرة</span>
+        </h2>
+      </div>
+      <div class="about__body">
+
+        <p class="reveal-words" data-words>
+          وَهَج استوديو متخصص في الموشن جرافيك. نحوّل الأفكار المجرّدة إلى مشاهد
+          متحركة تحمل معنى واضحاً وإيقاعاً بصرياً مدروساً. نعمل مع العلامات
+          التي تريد أن تُرى وتُفهم وتُحفَظ، عبر حركات مبنية على أسس علمية
+          في الحركة والطباعة والألوان والسرد البصري.
+        </p>
+        <div class="about__stats">
+          <div class="stat" data-reveal>
+            <span class="stat__value">
+              <span class="stat__num" data-count="120">120</span>
+              <span class="stat__plus">+</span>
+            </span>
+            <span class="stat__label">مشروع مُسلَّم</span>
+          </div>
+          <div class="stat" data-reveal>
+            <span class="stat__value">
+              <span class="stat__num" data-count="9">9</span>
+              <span class="stat__plus">+</span>
+            </span>
+            <span class="stat__label">سنوات خبرة</span>
+          </div>
+          <div class="stat" data-reveal>
+            <span class="stat__value">
+              <span class="stat__num" data-count="14">14</span>
+              <span class="stat__plus">+</span>
+            </span>
+            <span class="stat__label">جائزة وإعجاب</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section services" id="services">
+    <div class="wrap">
+      <header class="sec-head">
+        <span class="tag" data-reveal>خدماتنا</span>
+        <h2 class="h2" data-reveal>أربع هوايات <span class="grad">نُتقنها</span></h2>
+        <p class="sec-head__sub" data-reveal>كل خدمة تبدأ بفهم عميق للهدف، وتنتهي بحركة تخدم الهدف تماماً.</p>
+      </header>
+
+      <div class="cards">
+
+        <article class="card" data-tilt data-accent="fire">
+          <div class="card__glow"></div>
+          <div class="card__num">01</div>
+          <div class="card__icon">
+            <svg viewBox="0 0 48 48" aria-hidden="true"><use href="#i-motion"></use></svg>
+          </div>
+          <h3 class="card__title">موشن جرافيك</h3>
+          <p class="card__text">عناوين متحركة، انتقالات سينمائية، وشخصيات ثنائية الأبعاد تتحرك وكأنها حية.</p>
+          <span class="card__line"></span>
+          <span class="card__arrow" aria-hidden="true">↙</span>
+        </article>
+
+        <article class="card" data-tilt data-accent="gold">
+          <div class="card__glow"></div>
+          <div class="card__num">02</div>
+          <div class="card__icon">
+            <svg viewBox="0 0 48 48" aria-hidden="true"><use href="#i-identity"></use></svg>
+          </div>
+          <h3 class="card__title">هوية بصرية</h3>
+          <p class="card__text">شعارات وأنظمة بصرية متكاملة تقدّم حضوراً واحداً في كل نقطة تماس.</p>
+          <span class="card__line"></span>
+          <span class="card__arrow" aria-hidden="true">↙</span>
+        </article>
+
+        <article class="card" data-tilt data-accent="violet">
+          <div class="card__glow"></div>
+          <div class="card__num">03</div>
+          <div class="card__icon">
+            <svg viewBox="0 0 48 48" aria-hidden="true"><use href="#i-video"></use></svg>
+          </div>
+          <h3 class="card__title">فيديو إعلاني</h3>
+          <p class="card__text">سرد بصري مركّب من لقطات ورسم متحرك وصوت يصنع قصة قصيرة لا تُنسى.</p>
+          <span class="card__line"></span>
+          <span class="card__arrow" aria-hidden="true">↙</span>
+        </article>
+
+        <article class="card" data-tilt data-accent="mix">
+          <div class="card__glow"></div>
+          <div class="card__num">04</div>
+          <div class="card__icon">
+            <svg viewBox="0 0 48 48" aria-hidden="true"><use href="#i-ui"></use></svg>
+          </div>
+          <h3 class="card__title">تصميم واجهات</h3>
+          <p class="card__text">منتجات رقمية واضحة وسريعة، بانتقالات مدروسة تجعل الاستخدام أمتع.</p>
+          <span class="card__line"></span>
+          <span class="card__arrow" aria-hidden="true">↙</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section works" id="works">
+    <div class="wrap">
+      <header class="sec-head sec-head--center">
+        <span class="tag" data-reveal>أعمالنا</span>
+        <h2 class="h2" data-reveal>مختارات <span class="grad">من إبداعاتنا</span></h2>
+        <p class="sec-head__sub" data-reveal>مشاريع متنوّعة بين العلامة التجارية والإعلان والمنتج الرقمي.</p>
+      </header>
+
+      <div class="grid">
+        <a href="#" class="work work--1" data-work>
+          <span class="work__bg"></span>
+          <span class="work__in">
+            <span class="work__idx">01</span>
+            <span class="work__cat">هوية</span>
+            <span class="work__name">مقهى الفجر</span>
+            <span class="work__shine" aria-hidden="true"></span>
+          </span>
+        </a>
+        <a href="#" class="work work--2" data-work>
+          <span class="work__bg"></span>
+          <span class="work__in">
+            <span class="work__idx">02</span>
+            <span class="work__cat">فيديو</span>
+            <span class="work__name">حملة صيف</span>
+            <span class="work__shine" aria-hidden="true"></span>
+          </span>
+        </a>
+        <a href="#" class="work work--3" data-work>
+          <span class="work__bg"></span>
+          <span class="work__in">
+            <span class="work__idx">03</span>
+            <span class="work__cat">منتج</span>
+            <span class="work__name">تطبيق نُور</span>
+            <span class="work__shine" aria-hidden="true"></span>
+          </span>
+        </a>
+        <a href="#" class="work work--4" data-work>
+          <span class="work__bg"></span>
+          <span class="work__in">
+            <span class="work__idx">04</span>
+            <span class="work__cat">موشن</span>
+            <span class="work__name">حملة عناية</span>
+            <span class="work__shine" aria-hidden="true"></span>
+          </span>
+        </a>
+        <a href="#" class="work work--5" data-work>
+          <span class="work__bg"></span>
+          <span class="work__in">
+            <span class="work__idx">05</span>
+            <span class="work__cat">هوية</span>
+            <span class="work__name">متجر أصيل</span>
+            <span class="work__shine" aria-hidden="true"></span>
+          </span>
+        </a>
+        <a href="#" class="work work--6" data-work>
+          <span class="work__bg"></span>
+          <span class="work__in">
+            <span class="work__idx">06</span>
+            <span class="work__cat">إعلان</span>
+            <span class="work__name">بنك المستقبل</span>
+            <span class="work__shine" aria-hidden="true"></span>
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section contact" id="contact">
+    <div class="wrap contact__inner">
+      <span class="tag" data-reveal>تواصل معنا</span>
+      <h2 class="h2 h2--big" data-reveal>خلّنا <span class="grad">نضيء فكرتك</span></h2>
+      <p class="contact__sub" data-reveal>أرسل لنا فكرة مشروعك، وسنعود إليك بخطة عمل واضحة خلال 48 ساعة.</p>
+
+      <a href="mailto:hello@wahaj.studio" class="pulse-btn" data-reveal>
+        <span class="pulse-btn__rings"></span>
+        <span class="pulse-btn__label">ابدأ مشروعك الآن</span>
+        <span class="pulse-btn__arrow" aria-hidden="true">←</span>
+      </a>
+
+      <ul class="socials" data-reveal>
+        <li><a href="#" class="social"><span class="social__ico">in</span><span class="social__txt">لينكدإن</span></a></li>
+        <li><a href="#" class="social"><span class="social__ico">ig</span><span class="social__txt">إنستقرام</span></a></li>
+        <li><a href="#" class="social"><span class="social__ico">x</span><span class="social__txt">إكس</span></a></li>
+        <li><a href="#" class="social"><span class="social__ico">▶</span><span class="social__txt">يوتيوب</span></a></li>
+        <li><a href="#" class="social"><span class="social__ico">✉</span><span class="social__txt">البريد</span></a></li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap footer__in">
+    <a href="#hero" class="footer__brand">وَهَج</a>
+    <p class="footer__copy">حركة تضيء الفكرة — كل الحقوق محفوظة <span id="year">2026</span></p>
+  </div>
+</footer>
+
+<svg class="sprite" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="i-motion" viewBox="0 0 48 48">
+      <path d="M8 34c6-16 14-24 22-24 6 0 10 4 10 9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+      <path d="M8 42c8-6 16-9 24-9 4 0 7 .5 9 1.5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" opacity=".55"/>
+      <circle cx="38" cy="12" r="4" fill="currentColor"/>
+    </symbol>
+    <symbol id="i-identity" viewBox="0 0 48 48">
+      <circle cx="24" cy="24" r="15" fill="none" stroke="currentColor" stroke-width="2.4"/>
+      <circle cx="24" cy="24" r="7" fill="none" stroke="currentColor" stroke-width="2.4" opacity=".6"/>
+      <path d="M24 5v6M24 37v6M5 24h6M37 24h6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="i-video" viewBox="0 0 48 48">
+      <rect x="6" y="12" width="26" height="24" rx="4" fill="none" stroke="currentColor" stroke-width="2.4"/>
+      <path d="M32 22l10-6v16l-10-6z" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/>
+      <path d="M14 20v8l7-4z" fill="currentColor"/>
+    </symbol>
+    <symbol id="i-ui" viewBox="0 0 48 48">
+      <rect x="7" y="8" width="34" height="32" rx="5" fill="none" stroke="currentColor" stroke-width="2.4"/>
+      <path d="M7 18h34" stroke="currentColor" stroke-width="2.4"/>
+      <circle cx="13" cy="13" r="1.6" fill="currentColor"/>
+      <circle cx="19" cy="13" r="1.6" fill="currentColor"/>
+      <path d="M14 26h10M14 32h16" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" opacity=".6"/>
+    </symbol>
+  </defs>
+</svg>
+
+<script src="js/main.js" defer></script>
+</body>
+</html>
